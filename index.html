@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>亮暗图片拼接</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+      .box {
+        position: relative;
+        width: 100vw;
+      }
+      .left,
+      .right {
+        position: absolute;
+        left:0;
+        top: 0;
+        height: 100vh;
+        width: 100vw;
+        background-size: contain;
+        background-repeat: no-repeat;
+      }
+
+      .left {
+        background-image: url(./public/dark.png);
+      }
+
+      .right {
+        background-image: url(./public/light.png);
+        clip-path: polygon(100% 0, 100% 100%, 0 100%, 100% 0 );
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="box">
+      <div class="left"></div>
+      <div class="right"></div>
+    </div>
+  </body>
+</html>
